@@ -175,6 +175,12 @@ void main() {
     filterStudents.add(students[i]);
     }
   }
+  //using in keyword with for loop
+  for(Student student in students){
+    if(student.marks<81){
+       filterStudents.add(student);
+    }
+  }
 
  
   students.add(Student("James", 50));
