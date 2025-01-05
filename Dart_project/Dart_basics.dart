@@ -172,15 +172,17 @@ void main() {
   - print list out of for loop */
   for(int i = 0; i < students.length; i++){
     if(students[i].marks < 81){
-    filterStudent.add(student[i]);
+    filterStudents.add(students[i]);
     }
   }
 
+ 
   students.add(Student("James", 50));
   students.insert(0, Student("Ronaldo", 70));
   print(students);
   print(students[5].name);
   print(List.of(students));
+   print(filterStudents);
 }
 
 //function with multiple datatypes
