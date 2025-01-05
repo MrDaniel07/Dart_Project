@@ -162,6 +162,13 @@ void main() {
   students[2] = Student("Gabriel", 70);
   print(students);
 
+  /*looping to get element of a List who satisfy a condition
+  - A new list of empty students
+  - run a for loop 
+  - check if the grade of 1 student is greater than value
+  - if true, add student to my new list
+  - print list out of for loop */
+
   students.add(Student("James", 50));
   students.insert(0, Student("Ronaldo", 70));
   print(students);
