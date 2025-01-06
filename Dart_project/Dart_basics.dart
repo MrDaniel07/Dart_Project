@@ -93,7 +93,7 @@ void main() {
   }
   //loops
   //for
-  for (int i = 0; i < 7; i = i + 3) {
+  for (int i = 0; i < 7; i = i + 3) {;
     print("hello world ${i + 1}");
   }
   print(desZone.substring(0, 2));
@@ -181,8 +181,9 @@ void main() {
        filterStudents.add(student);
     }
   }
-
- 
+  //using where method
+ students.where((student) => student.marks < 81).toList();
+  print(student); 
   students.add(Student("James", 50));
   students.insert(0, Student("Ronaldo", 70));
   print(students);
