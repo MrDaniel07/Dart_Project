@@ -1,7 +1,13 @@
 //Programming with dart basics
+import 'package:http/http.dart' as http;
 
 int num2 = 50;
-void main() async{  
+void main() async{ 
+  //http request
+  var url = Uri.https('jsonplaceholder.typicode.com', 'users');
+  final res = await http.get(url);
+  print(res.body);
+  //async function
   await asyncFunction();
   normalFunc1();
    normalFunc2();
