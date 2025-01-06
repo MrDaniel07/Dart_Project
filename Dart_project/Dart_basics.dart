@@ -1,7 +1,11 @@
 //Programming with dart basics
 
 int num2 = 50;
-void main() {
+void main() async{  
+  await asyncFunction();
+  normalFunc1();
+   normalFunc2();
+
   final clock = DateTime.now();
   print(clock);
 
@@ -93,7 +97,7 @@ void main() {
   }
   //loops
   //for
-  for (int i = 0; i < 7; i = i + 3) {;
+  for (int i = 0; i < 7; i = i + 3) {
     print("hello world ${i + 1}");
   }
   print(desZone.substring(0, 2));
@@ -183,13 +187,18 @@ void main() {
   }
   //using where method
  students.where((student) => student.marks < 81).toList();
-  print(student); 
+  print(students); 
   students.add(Student("James", 50));
   students.insert(0, Student("Ronaldo", 70));
   print(students);
   print(students[5].name);
   print(List.of(students));
    print(filterStudents);
+//enums
+   final employee1 = Employee('Daniel', EmployeeType.swe);
+   final employee2 = Employee('Rivaan', EmployeeType.finance);
+   employee1.fn();
+   employee2.fn();
 }
 
 //function with multiple datatypes
@@ -235,7 +244,6 @@ class Dog implements Animal {
   final String sound = "Barks";
   final String name = "German Shepard";
 
-  @override
   final String family = "Amphibian";
 
   @override
@@ -293,3 +301,46 @@ class Student {
   String toString() => "Student: $name";
 }
 //Verification
+enum EmployeeType{
+  swe,
+  finance,
+  marketing,
+}
+
+const Map<EmployeeType, int> salaries ={
+  EmployeeType.swe: 200000,
+  EmployeeType.finance: 150000,
+  EmployeeType.marketing: 100000,
+};
+
+class Employee{
+final String name;
+final EmployeeType type;
+Employee(this.name, this.type);
+
+
+void fn(){
+  switch(type){
+    case EmployeeType.swe:
+    print("Software Engineer");
+    case EmployeeType.finance:
+    print("Finance");
+    case EmployeeType.marketing:
+    print("marketing");
+    break;
+  }
+}
+}
+
+Future<void> asyncFunction() async{
+ await Future.delayed(Duration(seconds: 3));
+  print('Async function completed');
+}
+
+void normalFunc1(){
+  print("normal function 1 completed");
+}
+
+void normalFunc2(){
+  print("normal function 2 completed");
+}
