@@ -1,2 +1,2 @@
 # Projects
-Repository for my completed and on-going projects
+Repository for my dart project. Also contains codes for my Youtube dart tutorial.
