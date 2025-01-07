@@ -1,10 +1,16 @@
 //Programming with dart basics
+import 'package:http/http.dart' as http;
 
 int num2 = 50;
-void main() async{  
+void main() async {
+  //http request
+  var url = Uri.https('jsonplaceholder.typicode.com', 'users');
+  final res = await http.get(url);
+  print(res.body);
+  //async function
   await asyncFunction();
   normalFunc1();
-   normalFunc2();
+  normalFunc2();
 
   final clock = DateTime.now();
   print(clock);
@@ -166,7 +172,7 @@ void main() async{
   students[2] = Student("Gabriel", 70);
   print(students);
 
-  List<Student> filterStudents =[];
+  List<Student> filterStudents = [];
 
   /*looping to get element of a List who satisfy a condition
   - A new list of empty students
@@ -174,31 +180,31 @@ void main() async{
   - check if the grade of 1 student is greater than value
   - if true, add student to my new list
   - print list out of for loop */
-  for(int i = 0; i < students.length; i++){
-    if(students[i].marks < 81){
-    filterStudents.add(students[i]);
+  for (int i = 0; i < students.length; i++) {
+    if (students[i].marks < 81) {
+      filterStudents.add(students[i]);
     }
   }
   //using in keyword with for loop
-  for(Student student in students){
-    if(student.marks<81){
-       filterStudents.add(student);
+  for (Student student in students) {
+    if (student.marks < 81) {
+      filterStudents.add(student);
     }
   }
   //using where method
- students.where((student) => student.marks < 81).toList();
-  print(students); 
+  students.where((student) => student.marks < 81).toList();
+  print(students);
   students.add(Student("James", 50));
   students.insert(0, Student("Ronaldo", 70));
   print(students);
   print(students[5].name);
   print(List.of(students));
-   print(filterStudents);
+  print(filterStudents);
 //enums
-   final employee1 = Employee('Daniel', EmployeeType.swe);
-   final employee2 = Employee('Rivaan', EmployeeType.finance);
-   employee1.fn();
-   employee2.fn();
+  final employee1 = Employee('Daniel', EmployeeType.swe);
+  final employee2 = Employee('Rivaan', EmployeeType.finance);
+  employee1.fn();
+  employee2.fn();
 }
 
 //function with multiple datatypes
@@ -300,47 +306,49 @@ class Student {
   @override
   String toString() => "Student: $name";
 }
+
 //Verification
-enum EmployeeType{
+enum EmployeeType {
   swe,
   finance,
   marketing,
 }
 
-const Map<EmployeeType, int> salaries ={
+const Map<EmployeeType, int> salaries = {
   EmployeeType.swe: 200000,
   EmployeeType.finance: 150000,
   EmployeeType.marketing: 100000,
 };
 
-class Employee{
-final String name;
-final EmployeeType type;
-Employee(this.name, this.type);
+class Employee {
+  final String name;
+  final EmployeeType type;
+  Employee(this.name, this.type);
 
-
-void fn(){
-  switch(type){
-    case EmployeeType.swe:
-    print("Software Engineer");
-    case EmployeeType.finance:
-    print("Finance");
-    case EmployeeType.marketing:
-    print("marketing");
-    break;
+  void fn() {
+    switch (type) {
+      case EmployeeType.swe:
+        print("Software Engineer");
+      case EmployeeType.finance:
+        print("Finance");
+      case EmployeeType.marketing:
+        print("marketing");
+        break;
+    }
   }
 }
-}
 
-Future<void> asyncFunction() async{
- await Future.delayed(Duration(seconds: 3));
+Future<void> asyncFunction() async {
+  await Future.delayed(Duration(seconds: 3));
   print('Async function completed');
 }
 
-void normalFunc1(){
+void normalFunc1() {
   print("normal function 1 completed");
 }
 
-void normalFunc2(){
+void normalFunc2() {
   print("normal function 2 completed");
 }
+//Records 
+({int x, int y, int z}) point = (x: 1, y: 2, z: 3);
