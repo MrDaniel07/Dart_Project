@@ -350,5 +350,11 @@ void normalFunc1() {
 void normalFunc2() {
   print("normal function 2 completed");
 }
-//Records 
+
+//Records
 ({int x, int y, int z}) point = (x: 1, y: 2, z: 3);
+
+//extensions
+extension on int {
+  int get triple => this * 3;
+}
