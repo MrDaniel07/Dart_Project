@@ -358,3 +358,5 @@ void normalFunc2() {
 extension on int {
   int get triple => this * 3;
 }
+
+
