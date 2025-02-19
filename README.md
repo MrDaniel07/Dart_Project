@@ -1,4 +1,4 @@
-**Dart Code Archive for Flutter Development  **
+**Dart Code Archive for Flutter Development**
 
 This repository contains Dart code snippets, exercises, and projects I wrote while learning **Flutter mobile app development**. It serves as a reference for key Dart concepts and Flutter implementations, making it useful for beginners and those revisiting foundational topics.  
 
